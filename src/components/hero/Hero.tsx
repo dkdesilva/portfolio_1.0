@@ -6,7 +6,7 @@ import profimg1 from "../../assets/profileimg.png";
 import { SiHackerrank, SiBlogger } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
 
-// Typing animation component
+// Typing animation for heading
 const TypingAnimation = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,7 +50,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-[100dvh] flex items-center justify-center pt-24 px-6 relative"
+      className="min-h-screen flex items-center justify-center pt-24 px-6 relative"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -59,7 +59,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-8 will-change-transform will-change-opacity"
           >
             {/* Heading */}
             <motion.h1
@@ -188,6 +188,11 @@ const Hero = () => {
                     maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                     WebkitMaskImage:
                       "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                  }}
+                  onError={(e) => {
+                    // fallback if mask-image not supported
+                    (e.currentTarget as HTMLImageElement).style.maskImage = "none";
+                    (e.currentTarget as HTMLImageElement).style.WebkitMaskImage = "none";
                   }}
                 />
               </motion.div>
