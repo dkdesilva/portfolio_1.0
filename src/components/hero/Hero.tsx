@@ -6,7 +6,7 @@ import profimg1 from "../../assets/profileimg.png";
 import { SiHackerrank, SiBlogger } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
 
-// Typing animation for heading
+// Typing animation component
 const TypingAnimation = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,10 +48,7 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center pt-24 px-6 relative"
-    >
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 px-6">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
@@ -59,7 +56,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8 will-change-transform will-change-opacity"
+            className="space-y-8"
           >
             {/* Heading */}
             <motion.h1
@@ -101,18 +98,12 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   {/* Download CV */}
                   <motion.a
-                    href="/Kalana-De-Silva-CV.pdf"
+                    href="/Kalana-De-Silva-CV.pdf"   // ✅ from public folder
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
-                    }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center gap-2 px-8 py-4 
-                      bg-gradient-to-r from-pink-500 to-purple-500 
-                      rounded-2xl font-semibold text-white shadow-lg 
-                      hover:shadow-pink-500/25 transition-all duration-300 cursor-pointer"
+                    className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl font-semibold text-white shadow-lg hover:shadow-pink-500/25 transition-all duration-300 cursor-pointer"
                   >
                     <AiOutlineDownload size={20} />
                     Download CV
@@ -125,9 +116,7 @@ const Hero = () => {
                     onClick={() =>
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                     }
-                    className="px-8 py-4 border-2 border-purple-400/50 rounded-2xl 
-                      font-semibold text-purple-300 hover:bg-purple-400/10 
-                      transition-all duration-300 cursor-pointer"
+                    className="px-8 py-4 border-2 border-purple-400/50 rounded-2xl font-semibold text-purple-300 hover:bg-purple-400/10 transition-all duration-300 cursor-pointer"
                   >
                     Get In Touch
                   </motion.button>
@@ -155,11 +144,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-xl 
-                    bg-white/10 supports-[backdrop-filter]:backdrop-blur-md 
-                    border border-white/20 text-gray-300 
-                    hover:text-white hover:bg-white/20 
-                    transition-all duration-300"
+                  className="p-3 rounded-xl bg-white/10 border border-white/20 text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300"
                 >
                   <Icon size={24} />
                 </motion.a>
@@ -177,7 +162,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
 
-              <motion.div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden">
+              <motion.div className="relative w-100 h-100 md:w-150 md:h-145 rounded-2xl overflow-hidden">
                 <motion.img
                   src={profimg1}
                   alt="Profile"
@@ -189,11 +174,6 @@ const Hero = () => {
                     WebkitMaskImage:
                       "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                   }}
-                  onError={(e) => {
-                    // fallback if mask-image not supported
-                    (e.currentTarget as HTMLImageElement).style.maskImage = "none";
-                    (e.currentTarget as HTMLImageElement).style.WebkitMaskImage = "none";
-                  }}
                 />
               </motion.div>
 
@@ -201,16 +181,12 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-20 h-20 
-                  bg-gradient-to-br from-pink-500 to-purple-500 
-                  rounded-2xl opacity-20 blur-xl"
+                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl opacity-20 blur-xl"
               />
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 
-                  bg-gradient-to-br from-blue-500 to-purple-500 
-                  rounded-full opacity-20 blur-lg"
+                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20 blur-lg"
               />
             </div>
           </motion.div>
