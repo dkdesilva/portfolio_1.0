@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your Swiper overrides */
+.swiper-pagination-bullet {
+  background-color: #d1d5db !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b !important;
+}
+
+.swiper-pagination {
+  bottom: 5px !important;
+}
