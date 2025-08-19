@@ -2,12 +2,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 // Import icons
-import { SiMysql, SiMariadb } from "react-icons/si";
-import { SiSupabase } from "react-icons/si";
+import { SiMysql, SiMariadb, SiSupabase, SiNextdotjs, SiSpringboot, SiMongodb, SiFlutter, SiTypescript, SiTailwindcss, SiCanva, SiIntellijidea, SiPostgresql } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { FaReact, FaJava, FaGitAlt, FaDatabase, FaFigma, FaAngular, FaNodeJs } from "react-icons/fa";
-import { SiNextdotjs, SiSpringboot, SiMongodb, SiFlutter, SiTypescript, SiTailwindcss, SiCanva, SiIntellijidea, SiPostgresql } from "react-icons/si";
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -33,7 +31,7 @@ const Skills = () => {
     { name: 'TYPESCRIPT', level: 82, category: 'Development', icon: <SiTypescript className="w-8 h-8 text-blue-500" /> },
     { name: 'TAILWIND CSS', level: 90, category: 'Development', icon: <SiTailwindcss className="w-8 h-8 text-cyan-400" /> },
 
-    { name: 'MYSQL', level: 95, category: 'Data Base', icon: <SiMysql className="w-12 h-12 text-yellow-400" /> },
+    { name: 'MYSQL', level: 95, category: 'Data Base', icon: <SiMysql className="w-8 h-8 text-yellow-400" /> },
     { name: 'SUPABASE', level: 90, category: 'Data Base', icon: <SiSupabase className="w-8 h-8 text-green-300" /> },
     { name: 'MS SQL SERVER', level: 95, category: 'Data Base', icon: <FaDatabase className="w-8 h-8 text-blue-500" /> },
     { name: 'MONGO DB', level: 90, category: 'Data Base', icon: <SiMongodb className="w-8 h-8 text-green-500" /> },
@@ -146,7 +144,7 @@ const SkillCard = ({ skill, index, inView }: { skill: any; index: number; inView
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center w-12 h-12"
             >
               {skill.icon}
             </motion.div>
