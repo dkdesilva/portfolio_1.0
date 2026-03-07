@@ -151,7 +151,7 @@ const Projects = () => {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
@@ -177,11 +177,10 @@ const Projects = () => {
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold transition-all cursor-pointer duration-300 ${
-                filter === category
-                  ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg"
-                  : "backdrop-blur-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-purple-400/30"
-              }`}
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold transition-all cursor-pointer duration-300 ${filter === category
+                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
+                  : "backdrop-blur-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-blue-400/30"
+                }`}
             >
               {category}
             </motion.button>
@@ -207,7 +206,7 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowMore(!showMore)}
-              className="px-6 md:px-8 py-2 md:py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg cursor-pointer"
+              className="px-6 md:px-8 py-2 md:py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg cursor-pointer"
             >
               {showMore ? "See Less" : "See More"}
             </motion.button>
@@ -225,7 +224,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: index * 0.1 }}
       whileHover={{ y: -10 }}
-      className="group backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-400/30 transition-all duration-300"
+      className="group backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-400/30 transition-all duration-300"
     >
       {/* Project Image */}
       <div className="relative overflow-hidden">
@@ -255,7 +254,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
       {/* Project Content */}
       <div className="p-4 md:p-6">
-        <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-pink-300 transition-colors duration-300">
+        <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
           {project.title}
         </h3>
         <p className="text-gray-400 text-sm mb-3 md:mb-4 leading-relaxed">
@@ -267,7 +266,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           {project.tags.map((tag: string, tagIndex: number) => (
             <span
               key={tagIndex}
-              className="px-2 md:px-3 py-1 text-xs bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-purple-400/20 rounded-full text-purple-300"
+              className="px-2 md:px-3 py-1 text-xs bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-400/20 rounded-full text-blue-300"
             >
               {tag}
             </span>
@@ -276,7 +275,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
         {/* Category Badge */}
         <div className="flex items-center justify-between">
-          <span className="px-2 md:px-3 py-1 text-xs bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/20 rounded-full text-blue-300">
+          <span className="px-2 md:px-3 py-1 text-xs bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-400/20 rounded-full text-blue-300">
             {project.category}
           </span>
         </div>

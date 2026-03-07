@@ -75,7 +75,7 @@ const Hero = () => {
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent"
               >
                 <Type />
               </motion.h2>
@@ -101,9 +101,9 @@ const Hero = () => {
                     href="/Kalana-De-Silva-CV.pdf"   // ✅ from public folder
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl font-semibold text-white shadow-lg hover:shadow-pink-500/25 transition-all duration-300 cursor-pointer"
+                    className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl font-semibold text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
                   >
                     <AiOutlineDownload size={20} />
                     Download CV
@@ -116,7 +116,7 @@ const Hero = () => {
                     onClick={() =>
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                     }
-                    className="px-8 py-4 border-2 border-purple-400/50 rounded-2xl font-semibold text-purple-300 hover:bg-purple-400/10 transition-all duration-300 cursor-pointer"
+                    className="px-8 py-4 border-2 border-blue-400/50 rounded-2xl font-semibold text-blue-300 hover:bg-blue-400/10 transition-all duration-300 cursor-pointer"
                   >
                     Get In Touch
                   </motion.button>
@@ -160,7 +160,7 @@ const Hero = () => {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full blur-2xl opacity-10 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500 rounded-full blur-2xl opacity-10 animate-pulse"></div>
 
               <motion.div className="relative w-100 h-100 md:w-150 md:h-145 rounded-2xl overflow-hidden">
                 <motion.img
@@ -181,12 +181,12 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl opacity-10 blur-xl"
+                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl opacity-10 blur-xl"
               />
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-10 blur-lg"
+                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-10 blur-lg"
               />
             </div>
           </motion.div>

@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent"
             >
               Kalana
             </motion.div>
@@ -68,8 +68,8 @@ const Navbar = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${activeSection === item.id
-                        ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 shadow-lg'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      ? 'bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 shadow-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
                       }`}
                   >
                     <Icon size={18} />
@@ -107,8 +107,8 @@ const Navbar = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl mb-2 transition-all duration-300 ${activeSection === item.id
-                        ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      ? 'bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
                       }`}
                   >
                     <Icon size={20} />
