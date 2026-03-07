@@ -42,12 +42,12 @@ const Contact = () => {
         message: formData.message,
       };
 
-    await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      templateParams,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    );
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
       setFormData({ name: "", email: "", subject: "", message: "" });
 
@@ -55,12 +55,12 @@ const Contact = () => {
       toast.success("Message sent successfully!", {
         style: {
           borderRadius: "12px",
-          background: "linear-gradient(to right, #ec4899, #a855f7)",
+          background: "linear-gradient(to right, #3b82f6, #2563eb)",
           color: "#fff",
         },
         iconTheme: {
           primary: "#fff",
-          secondary: "#ec4899",
+          secondary: "#3b82f6",
         },
       });
     } catch (error) {
@@ -122,7 +122,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Let's Connect
             </span>
           </h2>
@@ -154,7 +154,7 @@ const Contact = () => {
                   <motion.input
                     whileFocus={{
                       scale: 1.02,
-                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.3)",
+                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
                     }}
                     type="text"
                     id="name"
@@ -162,7 +162,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400/50 transition-all duration-300"
                     placeholder="Your name"
                   />
                 </div>
@@ -177,7 +177,7 @@ const Contact = () => {
                   <motion.input
                     whileFocus={{
                       scale: 1.02,
-                      boxShadow: "0 0 20px rgba(168, 85, 247, 0.3)",
+                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
                     }}
                     type="email"
                     id="email"
@@ -185,7 +185,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400/50 transition-all duration-300"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -201,7 +201,7 @@ const Contact = () => {
                 <motion.input
                   whileFocus={{
                     scale: 1.02,
-                    boxShadow: "0 0 20px rgba(168, 85, 247, 0.3)",
+                    boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
                   }}
                   type="text"
                   id="subject"
@@ -209,7 +209,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400/50 transition-all duration-300"
                   placeholder="Project inquiry"
                 />
               </div>
@@ -224,7 +224,7 @@ const Contact = () => {
                 <motion.textarea
                   whileFocus={{
                     scale: 1.02,
-                    boxShadow: "0 0 20px rgba(168, 85, 247, 0.3)",
+                    boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)",
                   }}
                   id="message"
                   name="message"
@@ -232,7 +232,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400/50 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400/50 transition-all duration-300 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -242,7 +242,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 cursor-pointer rounded-xl font-semibold text-white shadow-lg hover:shadow-pink-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 cursor-pointer rounded-xl font-semibold text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -279,12 +279,12 @@ const Contact = () => {
                       whileHover={{ scale: 1.05, x: 10 }}
                       className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:shadow-purple-500/25">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:shadow-blue-500/25">
                         <Icon size={20} className="text-white" />
                       </div>
                       <div>
                         <p className="text-sm text-gray-400">{item.label}</p>
-                        <p className="text-white font-medium group-hover:text-pink-300 transition-colors duration-300">
+                        <p className="text-white font-medium group-hover:text-blue-300 transition-colors duration-300">
                           {item.value}
                         </p>
                       </div>
@@ -309,7 +309,7 @@ const Contact = () => {
                       whileTap={{ scale: 0.9 }}
                       className="flex flex-col items-center space-y-2 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/25 transition-shadow duration-300">
                         <Icon size={20} className="text-white" />
                       </div>
                       <span className="text-sm text-gray-400 group-hover:text-white transition-colors duration-300">

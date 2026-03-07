@@ -156,7 +156,7 @@ const Certifications = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Certifications
             </span>
           </h2>
@@ -201,8 +201,8 @@ const Certifications = () => {
               onClick={() => swiperRef.current?.slidePrev()}
               className="absolute top-1/2 -left-12 -translate-y-1/2 z-10 
                         flex items-center justify-center w-10 h-10 
-                        rounded-full bg-black/40 text-yellow-400 
-                        cursor-pointer hover:bg-yellow-500/20 transition"
+                        rounded-full bg-black/40 text-blue-400 
+                        cursor-pointer hover:bg-blue-500/20 transition"
             >
               <ChevronLeft size={20} />
             </div>
@@ -211,8 +211,8 @@ const Certifications = () => {
               onClick={() => swiperRef.current?.slideNext()}
               className="absolute top-1/2 -right-12 -translate-y-1/2 z-10 
                         flex items-center justify-center w-10 h-10 
-                        rounded-full bg-black/40 text-yellow-400 
-                        cursor-pointer hover:bg-yellow-500/20 transition"
+                        rounded-full bg-black/40 text-blue-400 
+                        cursor-pointer hover:bg-blue-500/20 transition"
             >
               <ChevronRight size={20} />
             </div>
@@ -251,12 +251,12 @@ const CertificationCard = ({
       style={{ transformStyle: "preserve-3d" }}
     >
       {/* Glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-orange-500/20 to-red-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-blue-600/20 to-cyan-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-orange-400/30 transition-all duration-300 flex flex-col h-full">
-        <div className="relative p-6 bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10">
+      <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-400/30 transition-all duration-300 flex flex-col h-full">
+        <div className="relative p-6 bg-gradient-to-br from-blue-500/10 via-blue-600/10 to-cyan-500/10">
           <div className="flex items-center space-x-4 mb-4">
-            <div className="p-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl">
+            <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
               <Award size={24} className="text-white" />
             </div>
             <div className="w-16 h-16 rounded-lg overflow-hidden">
@@ -285,7 +285,7 @@ const CertificationCard = ({
         </div>
 
         <div className="p-6 pt-0 flex-1 flex flex-col">
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
             {cert.title}
           </h3>
           <p className="text-gray-400 mb-4">{cert.issuer}</p>
@@ -296,7 +296,7 @@ const CertificationCard = ({
                 initial={{ opacity: 0, scale: 0 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: index * 0.2 + skillIndex * 0.1 }}
-                className="px-3 py-1 text-xs bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-orange-400/20 rounded-full text-yellow-300"
+                className="px-3 py-1 text-xs bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-400/20 rounded-full text-blue-300"
               >
                 {skill}
               </motion.span>

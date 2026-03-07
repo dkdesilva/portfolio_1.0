@@ -53,12 +53,12 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Skills & Expertise
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive skill set spanning tools, development, and databases, 
+            A comprehensive skill set spanning tools, development, and databases,
             enabling me to create holistic digital solutions.
           </p>
         </motion.div>
@@ -73,11 +73,11 @@ const Skills = () => {
             className="mb-12"
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 {category}
               </span>
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skills
                 .filter(skill => skill.category === category)
@@ -103,7 +103,7 @@ const SkillCard = ({ skill, index, inView }: { skill: any; index: number; inView
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.2, delay: index * 0.1 }}
       whileHover={{ scale: 1.05, y: -5 }}
-      className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 group"
+      className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-400/30 transition-all duration-300 group"
     >
       <div className="flex flex-col items-center text-center">
         {/* Circular Progress */}
@@ -135,9 +135,9 @@ const SkillCard = ({ skill, index, inView }: { skill: any; index: number; inView
             />
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ec4899" />
-                <stop offset="50%" stopColor="#8b5cf6" />
-                <stop offset="100%" stopColor="#3b82f6" />
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="50%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#06b6d4" />
               </linearGradient>
             </defs>
           </svg>
@@ -153,17 +153,17 @@ const SkillCard = ({ skill, index, inView }: { skill: any; index: number; inView
           </div>
         </div>
 
-        <h4 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-pink-300 transition-colors duration-300">
+        <h4 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
           {skill.name}
         </h4>
-        
+
         {/* Skill Level Bar */}
         <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
             animate={inView ? { width: `${skill.level}%` } : {}}
             transition={{ duration: 1.5, delay: index * 0.1, ease: "easeInOut" }}
-            className="h-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full"
+            className="h-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 rounded-full"
           />
         </div>
         <p className="mt-2 text-sm text-gray-400">{skill.level}%</p>

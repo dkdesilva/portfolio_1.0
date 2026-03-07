@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-black text-white selection:bg-blue-500/30;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
 /* Your Swiper overrides */
 .swiper-pagination-bullet {
   background-color: #d1d5db !important;
@@ -9,7 +17,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #f59e0b !important;
+  background-color: #3b82f6 !important;
 }
 
 .swiper-pagination {

@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronUp, Github, Linkedin } from "lucide-react";
 import Type from "./Typing";
-import profimg1 from "../../assets/profileimg.png";
+import profimg1 from "../../assets/profileimg2.png";
 import { SiHackerrank, SiBlogger } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
+import Venus from "../ui/Venus";
 
-// Typing animation component
 const TypingAnimation = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,8 +48,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 px-6">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+      {/* 3D Venus Planet in Background */}
+      <div className="absolute top-1/2 right-[-100px] -translate-y-1/2 w-[600px] h-[600px] opacity-30 pointer-events-none hidden lg:block">
+        <Venus />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
           <motion.div
@@ -75,7 +80,7 @@ const Hero = () => {
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent"
               >
                 <Type />
               </motion.h2>
@@ -101,9 +106,9 @@ const Hero = () => {
                     href="/Kalana-De-Silva-CV.pdf"   // ✅ from public folder
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl font-semibold text-white shadow-lg hover:shadow-pink-500/25 transition-all duration-300 cursor-pointer"
+                    className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl font-semibold text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
                   >
                     <AiOutlineDownload size={20} />
                     Download CV
@@ -116,7 +121,7 @@ const Hero = () => {
                     onClick={() =>
                       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                     }
-                    className="px-8 py-4 border-2 border-purple-400/50 rounded-2xl font-semibold text-purple-300 hover:bg-purple-400/10 transition-all duration-300 cursor-pointer"
+                    className="px-8 py-4 border-2 border-blue-400/50 rounded-2xl font-semibold text-blue-300 hover:bg-blue-400/10 transition-all duration-300 cursor-pointer"
                   >
                     Get In Touch
                   </motion.button>
@@ -144,7 +149,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-xl bg-white/10 border border-white/20 text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300"
+                  className="p-3 rounded-xl bg-black/40 border border-white/20 text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300"
                 >
                   <Icon size={24} />
                 </motion.a>
@@ -159,8 +164,10 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+            <div className="relative group">
+              {/* Enhanced spotlight effect - multiple layers for depth */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-500/20 blur-[60px] rounded-full pointer-events-none"></div>
 
               <motion.div className="relative w-100 h-100 md:w-150 md:h-145 rounded-2xl overflow-hidden">
                 <motion.img
@@ -176,18 +183,6 @@ const Hero = () => {
                   }}
                 />
               </motion.div>
-
-              {/* Floating glow effects */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl opacity-20 blur-xl"
-              />
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20 blur-lg"
-              />
             </div>
           </motion.div>
         </div>
@@ -214,3 +209,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

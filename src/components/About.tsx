@@ -41,13 +41,13 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate Full-Stack Developer with a love for crafting digital products that 
-            blend clean design with powerful functionality. With experience across C++, Java, Spring Boot, React, and Next.js, 
+            I'm a passionate Full-Stack Developer with a love for crafting digital products that
+            blend clean design with powerful functionality. With experience across C++, Java, Spring Boot, React, and Next.js,
             I specialize in transforming complex ideas into seamless web, mobile, and desktop solutions.
           </p>
         </motion.div>
@@ -64,21 +64,21 @@ const About = () => {
               <h3 className="text-2xl font-bold text-white mb-4">My Journey</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Started as a curious programmer exploring the world of code and problem-solving.
-                Over time, I’ve grown into a versatile Full-Stack Developer who understands both 
+                Over time, I’ve grown into a versatile Full-Stack Developer who understands both
                 the creative and technical aspects of building impactful digital products.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                   <span className="text-gray-300">6+ Years of Building Web & Mobile Solutions</span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
                   <span className="text-gray-300">20+ Successful Projects</span>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
                   <span className="text-gray-300">User-Centered Design Approach</span>
                 </div>
               </div>
@@ -98,9 +98,9 @@ const About = () => {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300"
+                  className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-400/30 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                     <Icon size={24} className="text-white" />
                   </div>
                   <h4 className="text-xl font-semibold text-white mb-2">{feature.title}</h4>

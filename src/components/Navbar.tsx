@@ -48,11 +48,11 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl px-6 py-3 shadow-xl">
+        <div className="backdrop-blur-2xl bg-blue-950/40 border border-blue-500/30 rounded-2xl px-6 py-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent"
             >
               Kalana
             </motion.div>
@@ -67,11 +67,10 @@ const Navbar = () => {
                     onClick={() => scrollToSection(item.id)}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 shadow-lg'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${activeSection === item.id
+                      ? 'bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400 shadow-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      }`}
                   >
                     <Icon size={18} />
                     <span>{item.label}</span>
@@ -85,7 +84,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-xl bg-white/10 border border-white/20"
+              className="md:hidden p-2 rounded-xl bg-black/40 border border-blue-500/20"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -97,7 +96,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pt-4 border-t border-white/20"
+              className="md:hidden mt-4 pt-4 border-t border-blue-500/20"
             >
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -107,11 +106,10 @@ const Navbar = () => {
                     onClick={() => scrollToSection(item.id)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl mb-2 transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
+                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl mb-2 transition-all duration-300 ${activeSection === item.id
+                      ? 'bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-400'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      }`}
                   >
                     <Icon size={20} />
                     <span>{item.label}</span>
