@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/hero/Hero';
 import About from './components/About';
@@ -5,8 +6,15 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import Loading from './components/Loading';
 import { Toaster } from "react-hot-toast";
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <Loading onFinish={() => setLoading(false)} />;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-x-hidden">
       <div className="fixed inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-blue-500/10 pointer-events-none"></div>
