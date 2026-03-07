@@ -48,7 +48,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl px-6 py-3 shadow-xl">
+        <div className="backdrop-blur-2xl bg-blue-950/40 border border-blue-500/30 rounded-2xl px-6 py-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -84,7 +84,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-xl bg-black/40 border border-white/10"
+              className="md:hidden p-2 rounded-xl bg-black/40 border border-blue-500/20"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -96,7 +96,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pt-4 border-t border-white/20"
+              className="md:hidden mt-4 pt-4 border-t border-blue-500/20"
             >
               {navItems.map((item) => {
                 const Icon = item.icon;
