@@ -13,6 +13,8 @@ import img7 from "../assets/projects/iot.png";
 import img8 from "../assets/projects/ss.png";
 import img9 from "../assets/projects/melor_craft.png";
 import img10 from "../assets/projects/admindash.png";
+import img11 from "../assets/projects/srinath_travels.png";
+import img12 from "../assets/projects/seoul_k_foods.jpg";
 
 const Projects = () => {
   const isMobile =
@@ -27,6 +29,33 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
   const projects = [
+    {
+      id: 12,
+      title: "Seoul K Foods",
+      description:
+        "A fully functional and deployed Point of Sale (POS) system for Seoul K Foods, managing orders, inventory, and sales with a modern web interface.",
+      image: img12,
+      tags: ["React / Typescript", "Express.js", "Node.js", "Postgresql", "Tailwind CSS"],
+      category: "Web App",
+      githubUrl: "https://github.com/Kalana0001",
+    },
+    {
+      id: 11,
+      title: "Srinath Travels",
+      description:
+        "A premium, fully deployed travel booking platform developed for Srinath Travels, streamlining the management of tours and travel services.",
+      image: img11,
+      tags: [
+        "React / Typescript",
+        "Postgresql",
+        "Tailwind CSS",
+        "WhatsApp Automation",
+        "Express.js",
+        "Node.js",
+      ],
+      category: "Web App",
+      githubUrl: "https://github.com/Kalana0001",
+    },
     {
       id: 1,
       title: "Springboot Travel Web",
@@ -178,8 +207,8 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold transition-all cursor-pointer duration-300 ${filter === category
-                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
-                  : "backdrop-blur-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-blue-400/30"
+                ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
+                : "backdrop-blur-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-blue-400/30"
                 }`}
             >
               {category}

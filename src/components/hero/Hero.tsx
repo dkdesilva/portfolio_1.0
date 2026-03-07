@@ -5,8 +5,8 @@ import Type from "./Typing";
 import profimg1 from "../../assets/profileimg2.png";
 import { SiHackerrank, SiBlogger } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
+import Venus from "../ui/Venus";
 
-// Typing animation component
 const TypingAnimation = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,8 +48,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 px-6">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+      {/* 3D Venus Planet in Background */}
+      <div className="absolute top-1/2 right-[-100px] -translate-y-1/2 w-[600px] h-[600px] opacity-30 pointer-events-none hidden lg:block">
+        <Venus />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
           <motion.div
@@ -204,3 +209,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
