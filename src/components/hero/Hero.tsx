@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronUp, Github, Linkedin } from "lucide-react";
 import Type from "./Typing";
-import profimg1 from "../../assets/profileimg.png";
+import profimg1 from "../../assets/profileimg2.png";
 import { SiHackerrank, SiBlogger } from "react-icons/si";
 import { AiOutlineDownload } from "react-icons/ai";
 
@@ -159,8 +159,10 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-500 rounded-full blur-2xl opacity-10 animate-pulse"></div>
+            <div className="relative group">
+              {/* Enhanced spotlight effect - multiple layers for depth */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-500/20 blur-[60px] rounded-full pointer-events-none"></div>
 
               <motion.div className="relative w-100 h-100 md:w-150 md:h-145 rounded-2xl overflow-hidden">
                 <motion.img
@@ -176,18 +178,6 @@ const Hero = () => {
                   }}
                 />
               </motion.div>
-
-              {/* Floating glow effects */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl opacity-10 blur-xl"
-              />
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-10 blur-lg"
-              />
             </div>
           </motion.div>
         </div>
