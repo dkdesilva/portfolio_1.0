@@ -1,13 +1,13 @@
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial, PerspectiveCamera, Float } from '@react-three/drei';
+import { PerspectiveCamera, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Venus = () => {
     const meshRef = useRef<THREE.Mesh>(null);
 
-    useFrame((state, delta) => {
+    useFrame((_state, delta) => {
         if (meshRef.current) {
             meshRef.current.rotation.y += delta * 0.2;
         }

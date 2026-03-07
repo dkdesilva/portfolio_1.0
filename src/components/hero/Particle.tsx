@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const Particle = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -68,7 +68,7 @@ const Particle = () => {
                 this.reset(width, height);
             }
 
-            reset(width: number, height: number) {
+            reset(width: number, _height: number) {
                 this.x = Math.random() * width;
                 this.y = 0;
                 this.length = Math.random() * 100 + 40;
