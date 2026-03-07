@@ -13,7 +13,6 @@ const Particle = () => {
         let stars: Star[] = [];
         let shootingStars: ShootingStar[] = [];
         let nebulae: Nebula[] = [];
-        const starCount = 600;
 
         class Star {
             x!: number;
@@ -145,35 +144,51 @@ const Particle = () => {
         }
 
         const init = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            const dpr = window.devicePixelRatio || 1;
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
             stars = [];
             shootingStars = [];
             nebulae = [];
 
-            for (let i = 0; i < 4; i++) {
-                nebulae.push(new Nebula(canvas.width, canvas.height));
+            const isMobile = width < 768;
+            const currentStarCount = isMobile ? 200 : 600;
+            const milkyWayCount = isMobile ? 100 : 400;
+
+            for (let i = 0; i < (isMobile ? 2 : 4); i++) {
+                nebulae.push(new Nebula(width, height));
             }
 
-            for (let i = 0; i < starCount; i++) {
-                stars.push(new Star(canvas.width, canvas.height, false));
+            for (let i = 0; i < currentStarCount; i++) {
+                stars.push(new Star(width, height, false));
             }
 
-            for (let i = 0; i < 400; i++) {
-                stars.push(new Star(canvas.width, canvas.height, true));
+            for (let i = 0; i < milkyWayCount; i++) {
+                stars.push(new Star(width, height, true));
             }
 
-            for (let i = 0; i < 3; i++) {
-                shootingStars.push(new ShootingStar(canvas.width, canvas.height));
+            for (let i = 0; i < (isMobile ? 1 : 3); i++) {
+                shootingStars.push(new ShootingStar(width, height));
                 shootingStars[i].opacity = 0;
             }
         };
 
         const animate = () => {
             if (!ctx) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            ctx.clearRect(0, 0, width, height);
             ctx.fillStyle = '#000000';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, width, height);
 
             nebulae.forEach(nebula => {
                 nebula.update();
@@ -186,7 +201,7 @@ const Particle = () => {
             });
 
             shootingStars.forEach(sStar => {
-                sStar.update(canvas.width, canvas.height);
+                sStar.update(width, height);
                 sStar.draw();
             });
 
