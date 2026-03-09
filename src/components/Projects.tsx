@@ -187,25 +187,46 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Fully Functional Admin Dashboard",
+      title: "Admin E-Commerce System",
       description:
-        "A fully functional admin dashboard for analytics and management with modern UI and dynamic charts.",
+        "An Admin-side E-Commerce Management System for managing product categories with multi-level nesting and full product CRUD operations.",
       image: img10,
-      tags: ["React", "Springboot", "CSS", "Mysql"],
+      tags: ["React", "Node.js", "MySQL", "Express"],
       category: "Web App",
-      githubUrl: "https://github.com/dkdesilva/travel_web_springboot.git",
-      demoUrl: "https://github.com/dkdesilva/travel_web_springboot.git",
+      githubUrl: "https://github.com/dkdesilva/Admin_E-Commerce_System.git",
+      demoUrl: "https://github.com/dkdesilva/Admin_E-Commerce_System.git",
       details: {
-        longTitle: "Enterprise Admin & Analytics Dashboard",
-        overview: "A fully functional admin dashboard for analytics and management with modern UI and dynamic charts.",
-        goals: "To provide administrators with powerful tools to monitor business performance through data visualization.",
+        longTitle: "Admin E-Commerce System – Full Stack Developer Practical Test",
+        overview: "This is an Admin-side E-Commerce Management System built with React.js, Node.js (Express), and MySQL. It allows administrators to manage product categories (with multi-level nesting) and perform CRUD operations on products with image uploads and multi-category assignment.",
+        goals: "To build a complete operational platform for e-commerce management that handles complex product relationships and hierarchical category structures.",
         techStack: {
-          frontend: [{ name: "React", desc: "UI development" }, { name: "CSS", desc: "Styling" }],
-          backend: [{ name: "Springboot", desc: "API & Logic" }, { name: "MySQL", desc: "Database" }]
+          frontend: [
+            { name: "React.js", desc: "Core UI Framework" },
+            { name: "Axios", desc: "API Communication" },
+            { name: "React Router DOM", desc: "Navigation" },
+            { name: "React Toastify", desc: "Notifications" }
+          ],
+          backend: [
+            { name: "Node.js & Express.js", desc: "Server-side Logic" },
+            { name: "MySQL2", desc: "Database Driver" },
+            { name: "Multer", desc: "Image uploads and management" },
+            { name: "Dotenv", desc: "Secure environment management" },
+            { name: "Cors", desc: "Cross-Origin Resource Sharing" }
+          ]
         },
-        roles: [{ title: "Admin", desc: "Full access to analytics and system settings." }],
-        advancedFeatures: ["Dynamic Charts", "Real-time Analytics", "Data Management"],
-        impact: "Enhances decision-making with clear, real-time data visualization."
+        roles: [
+          {
+            title: "Administrator",
+            desc: "Provides full control over product inventory, category hierarchies, and system assets."
+          }
+        ],
+        advancedFeatures: [
+          "Multi-level Nesting: Advanced category management with hierarchical structures.",
+          "Product CRUD: Full create, read, update, and delete functionality for enterprise inventory.",
+          "Image Uploads: Integrated image processing and storage for product media.",
+          "Multi-category Assignment: Flexible product organization across different market segments."
+        ],
+        impact: "This project demonstrates the development of a robust backend-driven management system, focusing on data relationships, file handling, and hierarchical data structures."
       }
     },
     {
@@ -308,8 +329,8 @@ const Projects = () => {
       image: img6,
       tags: ["C#", "MS Sql Server"],
       category: "Other",
-      githubUrl: "https://github.com/Kalana0001/Car-Rental-Web.git",
-      demoUrl: "https://github.com/Kalana0001/Car-Rental-Web.git",
+      githubUrl: "https://github.com/dkdesilva/Gym-Management-System-C-.git",
+      demoUrl: "https://github.com/dkdesilva/Gym-Management-System-C-.git",
       details: {
         longTitle: "GymMaster - Windows Management Software",
         overview: "A Windows-based gym management system built in C# for handling members, subscriptions, and attendance.",
